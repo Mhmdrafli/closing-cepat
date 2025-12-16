@@ -13,28 +13,183 @@
             --background-light: #F8F9FA; 
             --card-background: #ffffff;
             --text-dark: #343A40;
-            --button-shadow: 0 8px 25px rgba(0, 123, 255, 0.25); /* Bayangan Biru */
+            --text-medium: #555; /* Warna teks deskripsi */
+            --button-shadow: 0 8px 25px rgba(0, 123, 255, 0.25); 
             --border-radius: 12px;
         }
 
-        /* Gaya dasar */
+        /* Gaya dasar (Full Width) */
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
             background-color: var(--background-light); 
             color: var(--text-dark);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+        
+        /* Kontainer Utama untuk membatasi konten di tengah */
+        .main-content {
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            text-align: center;
-            line-height: 1.6;
+            padding: 40px 20px;
+            min-height: 90vh; 
         }
-        .container {
+
+        /* Card Download */
+        .download-card {
             background-color: var(--card-background);
-            padding: 50px 30px; 
+            padding: 40px; 
             border-radius: var(--border-radius);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1); 
+            max-width: 450px; 
+            width: 100%;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        /* Header dan Tipografi */
+        h1 {
+            color: var(--primary-color); 
+            font-size: 2.2em;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+        .subtitle {
+            font-size: 1.0em;
+            color: var(--secondary-color); 
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+        
+        /* Gaya Logo Gambar */
+        .app-logo {
+            width: 70px; 
+            height: 70px; 
+            margin-bottom: 20px;
+            border-radius: 15px; 
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); 
+        }
+
+        /* Gaya untuk Blok Deskripsi */
+        .description-block {
+            text-align: left;
+            margin-bottom: 30px;
+            padding: 0 10px;
+            color: var(--text-medium);
+        }
+        .description-block h2 {
+            color: var(--text-dark);
+            font-size: 1.2em;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-weight: 600;
+            text-align: center;
+        }
+        .description-block p {
+            font-size: 0.95em;
+            margin-bottom: 15px;
+            color: var(--text-medium);
+            text-align: justify;
+        }
+        .creator-info {
+            font-size: 0.85em !important;
+            color: var(--secondary-color) !important;
+            text-align: center !important;
+            font-weight: 500;
+            margin-top: 20px;
+        }
+
+        /* Tombol Download */
+        .download-button {
+            display: block;
+            width: 100%; 
+            margin: 20px 0 30px 0;
+            padding: 14px 20px; 
+            font-size: 1.0em;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
+            box-shadow: var(--button-shadow); 
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: none;
+            cursor: pointer;
+        }
+        .download-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 123, 255, 0.4);
+        }
+        
+        /* Gaya Tombol APK */
+        .apk-btn {
+            background-color: var(--primary-color); 
+            color: white;
+        }
+        .apk-btn:active {
+             background-color: #0056b3; 
+        }
+        
+        /* Catatan Penting */
+        .note {
+            margin-top: 15px;
+            font-size: 0.8em;
+            color: #d32f2f; 
+            font-weight: 500;
+        }
+        .footer-text {
+            font-size: 0.75em;
+            color: #999;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <div class="download-card">
+            
+            <img src="logo.png" alt="Logo Aplikasi Closing Cepat" class="app-logo">
+            
+            <h1>Closing Cepat</h1>
+            <p class="subtitle">Aplikasi Resmi untuk Akselerasi Penjualan Anda</p>
+            
+            <div class="description-block">
+                <h2>Kelola Prospek, Raih Target Cepat</h2>
+                <p>
+                    **Closing Cepat** adalah *mobile* CRM esensial yang dibangun untuk memaksimalkan efisiensi tim penjualan Anda. Kami menghilangkan kerumitan administrasi, memungkinkan Anda fokus sepenuhnya pada konversi.
+                    <br><br>
+                    **Fitur Utama:**
+                    <ul>
+                        <li>**Pelacakan Prospek Real-Time:** Ketahui status setiap prospek Anda secara instan.</li>
+                        <li>**Notifikasi Cerdas:** Peringatan otomatis untuk tindak lanjut penting, memastikan tidak ada peluang yang terlewatkan.</li>
+                        <li>**Integrasi Komunikasi:** Sinkronisasi data yang mulus untuk menjaga alur kerja Anda tetap cepat dan terorganisir.</li>
+                    </ul>
+                </p>
+                <p class="creator-info">
+                    Aplikasi ini dikembangkan oleh **Muhammad Rafli** dengan fokus pada efisiensi dan kecepatan *closing* untuk para profesional penjualan modern.
+                </p>
+            </div>
+            <a 
+                href="https://drive.google.com/uc?export=download&id=1qBOp45BDXGDB8Pvm384WYLxVeZ3cJ1UL" 
+                class="download-button apk-btn"
+            >
+                📥 UNDUH FILE APK
+            </a>
+            
+            <p class="note">
+                ⚠️ PERINGATAN: Instalasi APK memerlukan aktivasi "Install from Unknown Sources" di pengaturan keamanan perangkat Anda.
+            </p>
+            
+            <p class="footer-text">
+                Aplikasi ini hanya dapat diakses oleh pengguna yang telah disetujui oleh Admin.
+            </p>
+        </div>
+    </div>
+</body>
+</html>            border-radius: var(--border-radius);
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1); 
             max-width: 420px;
             width: 90%;
