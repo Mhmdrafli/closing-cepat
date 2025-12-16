@@ -63,12 +63,12 @@
         /* Main Content Section - Deskripsi */
         .main-section {
             padding: 50px 20px;
-            text-align: center;
+            /* text-align: center; - Dihapus di sini, fokus pada content-block */
         }
         .content-block {
             max-width: var(--max-content-width);
             margin: 0 auto;
-            text-align: left;
+            text-align: center; /* PENTING: Untuk memusatkan tombol di sini */
             background-color: white; 
             padding: 40px;
             border-radius: 12px;
@@ -78,6 +78,7 @@
         /* Gaya Deskripsi */
         .description-block {
             margin-bottom: 30px;
+            text-align: left; /* Mengatur teks deskripsi kembali ke kiri */
         }
         .description-block h2 {
             color: var(--secondary-color);
@@ -119,12 +120,12 @@
 
         /* Tombol Download */
         .download-button {
-            display: inline-block;
+            display: inline-block; /* HARUS INLINE-BLOCK agar bisa di-center oleh parent */
             min-width: 250px;
-            margin: 30px auto 40px auto;
+            margin: 30px auto 40px auto; /* Margin auto akan bekerja karena display: inline-block */
             padding: 16px 40px; 
             font-size: 1.1em;
-            border-align: center;
+            /* border-align: center; DIHAPUS, ini adalah typo yang salah */
             font-weight: 700;
             text-decoration: none;
             border-radius: 50px;
@@ -203,7 +204,7 @@
                 href="https://drive.google.com/uc?export=download&id=1qBOp45BDXGDB8Pvm384WYLxVeZ3cJ1UL" 
                 class="download-button apk-btn"
             >
-                📥 <em>UNDUH FILE APK SEKARANG</em>
+                📥 <em>DOWNLOAD</em>
             </a>
             
         </div>
