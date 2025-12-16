@@ -4,178 +4,525 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Download Aplikasi Closing Cepat | Official</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* Variabel CSS disesuaikan dengan tema aplikasi */
         :root {
-            --primary-color: #007BFF;     /* Biru Kredibilitas/Aksi */
-            --secondary-color: #28A745;   /* Hijau Kesuksesan/Aksen */
-            --background-light: #F8F9FA; 
-            --text-dark: #343A40;
-            --text-medium: #555;
-            --button-shadow: 0 8px 20px rgba(0, 123, 255, 0.4); 
-            --max-content-width: 900px;
+            --primary-color: #007BFF;
+            --primary-dark: #0056b3;
+            --secondary-color: #28A745;
+            --accent-color: #17a2b8;
+            --background-light: #F8F9FA;
+            --background-white: #FFFFFF;
+            --text-dark: #212529;
+            --text-medium: #6c757d;
+            --text-light: #adb5bd;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
+            --shadow-xl: 0 12px 40px rgba(0, 123, 255, 0.3);
+            --border-radius: 16px;
+            --max-content-width: 1000px;
         }
 
-        /* Gaya dasar (Full Width) */
-        body {
-            font-family: 'Poppins', sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background-color: var(--background-light); 
-            color: var(--text-dark);
-            min-height: 100vh;
-            line-height: 1.6;
-        }
-        
-        /* Header Section - Penuh Warna */
-        .app-header {
-            background: linear-gradient(135deg, var(--primary-color), #0056b3); /* Gradient Biru */
-            color: white;
-            padding: 40px 20px;
-            text-align: center;
-        }
-        .header-content {
-            max-width: var(--max-content-width);
-            margin: 0 auto;
-        }
-        .app-logo {
-            width: 80px; 
-            height: 80px; 
-            margin-bottom: 15px;
-            border-radius: 20%; 
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
-            background-color: white;
-        }
-        .app-header h1 {
-            font-size: 3em;
-            margin: 0 0 5px 0;
-            font-weight: 700;
-            color: white;
-        }
-        .app-header .subtitle {
-            font-size: 1.2em;
-            font-weight: 400;
-            margin-bottom: 0;
-            color: #c7e0ff;
+            box-sizing: border-box;
         }
 
-        /* Main Content Section - Deskripsi */
-        .main-section {
-            padding: 50px 20px;
-            /* text-align: center; - Dihapus di sini, fokus pada content-block */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-light);
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
         }
+
+        /* Animated Background */
+        .animated-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .shape-1 {
+            width: 300px;
+            height: 300px;
+            background: var(--secondary-color);
+            top: 10%;
+            left: -100px;
+            animation-delay: 0s;
+        }
+
+        .shape-2 {
+            width: 200px;
+            height: 200px;
+            background: var(--accent-color);
+            top: 60%;
+            right: -80px;
+            animation-delay: 5s;
+        }
+
+        .shape-3 {
+            width: 150px;
+            height: 150px;
+            background: var(--primary-color);
+            bottom: 20%;
+            left: 10%;
+            animation-delay: 10s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(180deg); }
+        }
+
+        /* Header Section */
+        .app-header {
+            position: relative;
+            background: linear-gradient(135deg, #0066cc 0%, var(--primary-color) 50%, #0099ff 100%);
+            color: white;
+            padding: 60px 20px 80px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .app-header::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: var(--background-light);
+            border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+        }
+
+        .header-content {
+            position: relative;
+            max-width: var(--max-content-width);
+            margin: 0 auto;
+            z-index: 1;
+        }
+
+        .app-logo {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px;
+            border-radius: 24px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            background-color: white;
+            padding: 12px;
+            transition: transform 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .app-logo:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .app-header h1 {
+            font-size: 3.5em;
+            margin: 0 0 10px 0;
+            font-weight: 800;
+            color: white;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            letter-spacing: -1px;
+        }
+
+        .app-header .subtitle {
+            font-size: 1.3em;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 0;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            font-size: 0.9em;
+            font-weight: 600;
+            margin-top: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* Main Section */
+        .main-section {
+            padding: 40px 20px 60px;
+            position: relative;
+        }
+
         .content-block {
             max-width: var(--max-content-width);
             margin: 0 auto;
-            text-align: center; /* PENTING: Untuk memusatkan tombol di sini */
-            background-color: white; 
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            background-color: var(--background-white);
+            padding: 50px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            z-index: 1;
         }
-        
-        /* Gaya Deskripsi */
+
+        /* Description Section */
         .description-block {
-            margin-bottom: 30px;
-            text-align: left; /* Mengatur teks deskripsi kembali ke kiri */
+            margin-bottom: 40px;
         }
+
         .description-block h2 {
-            color: var(--secondary-color);
-            font-size: 1.8em;
-            margin-top: 0;
-            margin-bottom: 15px;
+            color: var(--primary-color);
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .description-block h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        .intro-text {
+            font-size: 1.15em;
+            color: var(--text-medium);
+            text-align: center;
+            margin-bottom: 35px;
+            line-height: 1.8;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Features Grid */
+        .features-section {
+            margin: 40px 0;
+        }
+
+        .features-section h3 {
+            color: var(--text-dark);
+            font-size: 1.5em;
+            margin-bottom: 25px;
             font-weight: 600;
             text-align: center;
         }
-        .description-block p {
-            font-size: 1.0em;
-            margin-bottom: 20px;
-            color: var(--text-medium);
-            text-align: justify;
-        }
-        .description-block ul {
-            list-style: none;
-            padding: 0;
-            margin-top: -10px;
-        }
-        /* Ikon Checklist Hijau untuk list item */
-        .description-block ul li {
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="%2328a745" d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>') no-repeat left 5px;
-            background-size: 18px 18px;
-            padding-left: 25px;
-            margin-bottom: 8px;
-            color: var(--text-dark);
-            font-weight: 500;
-        }
-        .creator-info {
-            font-size: 0.9em !important;
-            color: var(--primary-color) !important;
-            text-align: center !important;
-            font-weight: 600;
-            margin-top: 30px;
-            border-top: 1px solid #eee;
-            padding-top: 15px;
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
         }
 
-        /* Tombol Download */
+        .feature-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            padding: 30px;
+            border-radius: 12px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .feature-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .feature-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .feature-card h4 {
+            color: var(--primary-color);
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            color: var(--text-medium);
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        /* Benefits List */
+        .benefits-list {
+            background: linear-gradient(135deg, #f0f8ff 0%, #e6f4ff 100%);
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+        }
+
+        .benefits-list h3 {
+            color: var(--primary-dark);
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .benefits-list ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .benefits-list li {
+            background: white;
+            padding: 15px 15px 15px 45px;
+            border-radius: 8px;
+            position: relative;
+            color: var(--text-dark);
+            font-weight: 500;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s ease;
+        }
+
+        .benefits-list li:hover {
+            transform: translateX(5px);
+        }
+
+        .benefits-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 24px;
+            height: 24px;
+            background: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        /* Download Button */
+        .download-section {
+            text-align: center;
+            margin: 50px 0 30px;
+        }
+
         .download-button {
-            display: inline-block; /* HARUS INLINE-BLOCK agar bisa di-center oleh parent */
-            min-width: 250px;
-            margin: 30px auto 40px auto; /* Margin auto akan bekerja karena display: inline-block */
-            padding: 16px 40px; 
-            font-size: 1.1em;
-            /* border-align: center; DIHAPUS, ini adalah typo yang salah */
+            display: inline-block;
+            padding: 20px 50px;
+            font-size: 1.2em;
             font-weight: 700;
             text-decoration: none;
             border-radius: 50px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: var(--button-shadow); 
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-xl);
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             border: none;
             cursor: pointer;
-        }
-        .download-button:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 15px 35px rgba(0, 123, 255, 0.5);
-        }
-        
-        .apk-btn {
-            background-color: var(--primary-color); 
+            background: linear-gradient(135deg, var(--primary-color) 0%, #0099ff 100%);
             color: white;
+            position: relative;
+            overflow: hidden;
         }
-        .apk-btn:active {
-             background-color: #0056b3; 
+
+        .download-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
         }
-        
-        /* Catatan Kaki */
-        .footer-note {
+
+        .download-button:hover::before {
+            left: 100%;
+        }
+
+        .download-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 45px rgba(0, 123, 255, 0.4);
+        }
+
+        .download-button:active {
+            transform: translateY(-1px) scale(1.03);
+        }
+
+        .download-info {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-medium);
+            font-size: 0.9em;
+        }
+
+        .info-item span {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        /* Creator Info */
+        .creator-info {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff5cc 100%);
+            padding: 25px;
+            border-radius: 12px;
             text-align: center;
-            padding: 20px 0 40px 0;
-            background-color: #0056b3;
+            margin-top: 40px;
+            border-left: 4px solid var(--secondary-color);
         }
-        .note {
-            font-size: 0.85em;
-            color: #dc3545;
-            font-weight: 500;
-            max-width: 450px;
-            margin: 0 auto 15px auto;
+
+        .creator-info p {
+            font-size: 1em;
+            color: var(--text-dark);
+            margin: 0;
+            line-height: 1.6;
         }
+
+        .creator-info strong {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        /* Footer */
+        .footer-note {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #003d82 100%);
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .warning-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 193, 7, 0.5);
+            border-radius: 12px;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto 25px;
+        }
+
+        .warning-box p {
+            color: #ffc107;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin: 0;
+            line-height: 1.6;
+        }
+
         .footer-text {
-        
-            font-size: 0.75em;
-            color: #ffff;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.85em;
+            line-height: 1.8;
+        }
+
+        .footer-text strong {
+            color: white;
+            font-weight: 600;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .app-header h1 {
+                font-size: 2.5em;
+            }
+
+            .app-header .subtitle {
+                font-size: 1.1em;
+            }
+
+            .content-block {
+                padding: 30px 20px;
+            }
+
+            .description-block h2 {
+                font-size: 1.8em;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .download-button {
+                padding: 18px 40px;
+                font-size: 1em;
+            }
+
+            .download-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        /* Loading Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .content-block {
+            animation: fadeIn 0.8s ease-out;
         }
     </style>
 </head>
 <body>
     
     <header class="app-header">
+        <div class="animated-bg">
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+            <div class="floating-shape shape-3"></div>
+        </div>
         <div class="header-content">
             <img src="images/logo.png" alt="Logo Aplikasi Closing Cepat" class="app-logo">
             <h1>Closing Cepat</h1>
-            <p class="subtitle">Aplikasi Resmi untuk Akselerasi Penjualan Anda</p>
+            <p class="subtitle">Revolusi Digital untuk Akselerasi Penjualan Modern</p>
+            <div class="badge">🚀 Official Release 2025</div>
         </div>
     </header>
 
@@ -183,39 +530,94 @@
         <div class="content-block">
             
             <div class="description-block">
-                <h2>Kelola Prospek, Raih Target Cepat</h2>
-                <p>
-                    Closing Cepat adalah *mobile* CRM esensial yang dibangun untuk memaksimalkan efisiensi tim penjualan Anda. Kami menghilangkan kerumitan administrasi, memungkinkan Anda fokus sepenuhnya pada konversi.
+                <h2>Transformasi Penjualan Anda Dimulai di Sini</h2>
+                
+                <p class="intro-text">
+                    <strong>Closing Cepat</strong> adalah solusi mobile CRM revolusioner yang dirancang khusus untuk tim penjualan yang ingin melampaui target. Dengan teknologi terdepan dan antarmuka yang intuitif, kami memberdayakan Anda untuk fokus pada hal yang paling penting: <strong>menutup lebih banyak deal</strong>.
                 </p>
-                <p>
-                    Fitur Utama yang Mendukung Penjualan Anda:
-                    <ul>
-                        <li>Pelacakan Prospek Real-Time: Ketahui status setiap prospek Anda secara instan.</li>
-                        <li>Notifikasi Cerdas: Peringatan otomatis untuk tindak lanjut penting, memastikan tidak ada peluang yang terlewatkan.</li>
-                        <li>Integrasi Komunikasi: Sinkronisasi data yang mulus untuk menjaga alur kerja Anda tetap cepat dan terorganisir.</li>
-                    </ul>
-                </p>
-                <p class="creator-info">
-                    Aplikasi ini dikembangkan oleh Muhammad Rafli dengan fokus pada efisiensi dan kecepatan closing untuk para profesional penjualan modern.
-                </p>
+
+                <div class="features-section">
+                    <h3>✨ Fitur Unggulan yang Mengakselerasi Penjualan</h3>
+                    
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <span class="feature-icon">📊</span>
+                            <h4>Dashboard Real-Time</h4>
+                            <p>Pantau seluruh pipeline penjualan Anda dalam satu layar. Update otomatis dan visualisasi data yang memudahkan pengambilan keputusan cepat.</p>
+                        </div>
+
+                        <div class="feature-card">
+                            <span class="feature-icon">🔔</span>
+                            <h4>Smart Notifications</h4>
+                            <p>Notifikasi cerdas yang memprioritaskan follow-up penting. Tidak ada prospek yang terlewat, tidak ada peluang yang hilang.</p>
+                        </div>
+
+                        <div class="feature-card">
+                            <span class="feature-icon">🔗</span>
+                            <h4>Integrasi Seamless</h4>
+                            <p>Sinkronisasi otomatis dengan tools komunikasi favorit Anda. Satu platform untuk semua kebutuhan penjualan.</p>
+                        </div>
+
+                        <div class="feature-card">
+                            <span class="feature-icon">📈</span>
+                            <h4>Analytics Mendalam</h4>
+                            <p>Laporan performa lengkap dan insights berbasis AI untuk strategi penjualan yang lebih efektif.</p>
+                        </div>
+
+                        <div class="feature-card">
+                            <span class="feature-icon">⚡</span>
+                            <h4>Automasi Cerdas</h4>
+                            <p>Otomatisasi tugas repetitif sehingga Anda bisa fokus membangun relasi dan menutup deal.</p>
+                        </div>
+
+                        <div class="feature-card">
+                            <span class="feature-icon">🔒</span>
+                            <h4>Keamanan Terjamin</h4>
+                            <p>Enkripsi end-to-end dan backup otomatis untuk melindungi data anda.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="creator-info">
+                    <p>
+                        💡 Dikembangkan oleh <strong>Muhammad Rafli</strong>, seorang profesional dengan pengalaman mendalam di bidang penjualan dan teknologi. Aplikasi ini lahir dari pemahaman nyata tentang tantangan yang dihadapi tim sales modern dan dirancang untuk memberikan solusi praktis yang benar-benar berdampak.
+                    </p>
+                </div>
             </div>
             
-            <a 
-                href="https://drive.google.com/uc?export=download&id=1qBOp45BDXGDB8Pvm384WYLxVeZ3cJ1UL" 
-                class="download-button apk-btn"
-            >
-                📥 <em>DOWNLOAD</em>
-            </a>
+            <div class="download-section">
+                <a 
+                    href="https://drive.google.com/uc?export=download&id=1qBOp45BDXGDB8Pvm384WYLxVeZ3cJ1UL" 
+                    class="download-button"
+                >
+                    📥 Download APK Sekarang
+                </a>
+                
+                <div class="download-info">
+                    <div class="info-item">
+                        📱 <span>Android 6.0+</span>
+                    </div>
+                    <div class="info-item">
+                        💾 <span>Size: ~50MB</span>
+                    </div>
+                    <div class="info-item">
+                        ⭐ <span>Version 2.0</span>
+                    </div>
+                </div>
+            </div>
             
         </div>
     </div>
     
     <footer class="footer-note">
-        <p class="note">
-            ⚠️ PERINGATAN: Instalasi APK memerlukan aktivasi "Install from Unknown Sources" di pengaturan keamanan perangkat Anda.
-        </p>
+        <div class="warning-box">
+            <p>
+                ⚠️ <strong>Penting:</strong> Instalasi file APK memerlukan pengaturan "Install from Unknown Sources" atau "Sumber Tidak Dikenal" pada perangkat Android Anda. Cek Pengaturan → Keamanan → centang opsi tersebut sebelum instalasi.
+            </p>
+        </div>
         <p class="footer-text">
-            Aplikasi ini hanya dapat diakses oleh pengguna yang telah disetujui oleh Admin. Hak Cipta &copy; 2025 Closing Cepat.
+            <strong>Akses Terbatas:</strong> Aplikasi ini hanya tersedia untuk pengguna yang telah mendapatkan persetujuan dari Administrator.<br>
+            Semua Hak Cipta Dilindungi © 2025 <strong>Closing Cepat</strong>. Developed for Muhammad Rafli
         </p>
     </footer>
 
