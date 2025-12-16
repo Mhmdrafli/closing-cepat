@@ -8,14 +8,13 @@
     <style>
         /* Variabel CSS disesuaikan dengan tema aplikasi */
         :root {
-            --primary-color: #007BFF; /* Biru Kredibilitas/Aksi */
-            --secondary-color: #28A745; /* Hijau Kesuksesan/Aksen */
+            --primary-color: #007BFF;     /* Biru Kredibilitas/Aksi */
+            --secondary-color: #28A745;   /* Hijau Kesuksesan/Aksen */
             --background-light: #F8F9FA; 
-            --card-background: #ffffff;
             --text-dark: #343A40;
-            --text-medium: #555; /* Warna teks deskripsi */
-            --button-shadow: 0 8px 25px rgba(0, 123, 255, 0.25); 
-            --border-radius: 12px;
+            --text-medium: #555;
+            --button-shadow: 0 8px 20px rgba(0, 123, 255, 0.4); 
+            --max-content-width: 900px;
         }
 
         /* Gaya dasar (Full Width) */
@@ -29,102 +28,116 @@
             line-height: 1.6;
         }
         
-        /* Kontainer Utama untuk membatasi konten di tengah */
-        .main-content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        /* Header Section - Penuh Warna */
+        .app-header {
+            background: linear-gradient(135deg, var(--primary-color), #0056b3); /* Gradient Biru */
+            color: white;
             padding: 40px 20px;
-            min-height: 90vh; 
-        }
-
-        /* Card Download */
-        .download-card {
-            background-color: var(--card-background);
-            padding: 40px; 
-            border-radius: var(--border-radius);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1); 
-            max-width: 450px; 
-            width: 100%;
             text-align: center;
-            transition: all 0.3s ease;
+        }
+        .header-content {
+            max-width: var(--max-content-width);
+            margin: 0 auto;
+        }
+        .app-logo {
+            width: 80px; 
+            height: 80px; 
+            margin-bottom: 15px;
+            border-radius: 20%; 
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+            background-color: white; /* Memberi kontras pada logo */
+        }
+        .app-header h1 {
+            font-size: 3em;
+            margin: 0 0 5px 0;
+            font-weight: 700;
+            color: white;
+        }
+        .app-header .subtitle {
+            font-size: 1.2em;
+            font-weight: 400;
+            margin-bottom: 0;
+            color: #c7e0ff; /* Teks subtitle lebih terang */
         }
 
-        /* Header dan Tipografi */
-        h1 {
-            color: var(--primary-color); 
-            font-size: 2.2em;
-            margin-bottom: 5px;
-            font-weight: 700;
+        /* Main Content Section - Deskripsi */
+        .main-section {
+            padding: 50px 20px;
+            text-align: center;
         }
-        .subtitle {
-            font-size: 1.0em;
-            color: var(--secondary-color); 
-            margin-bottom: 25px;
-            font-weight: 500;
+        .content-block {
+            max-width: var(--max-content-width);
+            margin: 0 auto;
+            text-align: left;
+            background-color: white; /* Memastikan blok konten menonjol */
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
         }
         
-        /* Gaya Logo Gambar */
-        .app-logo {
-            width: 70px; 
-            height: 70px; 
-            margin-bottom: 20px;
-            border-radius: 15px; 
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); 
-        }
-
-        /* Gaya untuk Blok Deskripsi */
+        /* Gaya Deskripsi */
         .description-block {
-            text-align: left;
             margin-bottom: 30px;
-            padding: 0 10px;
-            color: var(--text-medium);
         }
         .description-block h2 {
-            color: var(--text-dark);
-            font-size: 1.2em;
+            color: var(--secondary-color); /* Judul deskripsi berwarna Hijau */
+            font-size: 1.8em;
             margin-top: 0;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             font-weight: 600;
             text-align: center;
         }
         .description-block p {
-            font-size: 0.95em;
-            margin-bottom: 15px;
+            font-size: 1.0em;
+            margin-bottom: 20px;
             color: var(--text-medium);
             text-align: justify;
         }
-        .creator-info {
-            font-size: 0.85em !important;
-            color: var(--secondary-color) !important;
-            text-align: center !important;
+        .description-block ul {
+            list-style: none;
+            padding: 0;
+            margin-top: -10px;
+        }
+        .description-block ul li {
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="%2328a745" d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>') no-repeat left 5px;
+            background-size: 18px 18px;
+            padding-left: 25px;
+            margin-bottom: 8px;
+            color: var(--text-dark);
             font-weight: 500;
-            margin-top: 20px;
+        }
+        .creator-info {
+            font-size: 0.9em !important;
+            color: var(--primary-color) !important;
+            text-align: center !important;
+            font-weight: 600;
+            margin-top: 30px;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
         }
 
         /* Tombol Download */
         .download-button {
-            display: block;
-            width: 100%; 
-            margin: 20px 0 30px 0;
-            padding: 14px 20px; 
-            font-size: 1.0em;
-            font-weight: 600;
+            display: inline-block; /* Agar bisa berada di tengah */
+            min-width: 250px;
+            margin: 30px auto 40px auto;
+            padding: 16px 40px; 
+            font-size: 1.1em;
+            font-weight: 700;
             text-decoration: none;
-            border-radius: 8px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
+            border-radius: 50px; /* Tombol berbentuk pil */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             box-shadow: var(--button-shadow); 
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
             border: none;
             cursor: pointer;
         }
         .download-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 123, 255, 0.4);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 35px rgba(0, 123, 255, 0.5);
         }
         
-        /* Gaya Tombol APK */
         .apk-btn {
             background-color: var(--primary-color); 
             color: white;
@@ -133,171 +146,74 @@
              background-color: #0056b3; 
         }
         
-        /* Catatan Penting */
+        /* Catatan Kaki */
+        .footer-note {
+            text-align: center;
+            padding: 20px 0 40px 0;
+            background-color: var(--background-light);
+        }
         .note {
-            margin-top: 15px;
-            font-size: 0.8em;
-            color: #d32f2f; 
+            font-size: 0.85em;
+            color: #dc3545; /* Merah Peringatan */
             font-weight: 500;
+            max-width: 450px;
+            margin: 0 auto 15px auto;
         }
         .footer-text {
             font-size: 0.75em;
-            color: #999;
-            margin-top: 15px;
+            color: #aaa;
         }
     </style>
 </head>
 <body>
-    <div class="main-content">
-        <div class="download-card">
-            
+    
+    <header class="app-header">
+        <div class="header-content">
             <img src="images/logo.png" alt="Logo Aplikasi Closing Cepat" class="app-logo">
-            
             <h1>Closing Cepat</h1>
             <p class="subtitle">Aplikasi Resmi untuk Akselerasi Penjualan Anda</p>
+        </div>
+    </header>
+
+    <div class="main-section">
+        <div class="content-block">
             
             <div class="description-block">
                 <h2>Kelola Prospek, Raih Target Cepat</h2>
                 <p>
-                    **Closing Cepat** adalah *mobile* CRM esensial yang dibangun untuk memaksimalkan efisiensi tim penjualan Anda. Kami menghilangkan kerumitan administrasi, memungkinkan Anda fokus sepenuhnya pada konversi.
-                    <br><br>
-                    **Fitur Utama:**
+                    Closing Cepat adalah *mobile* CRM esensial yang dibangun untuk memaksimalkan efisiensi tim penjualan Anda. Kami menghilangkan kerumitan administrasi, memungkinkan Anda fokus sepenuhnya pada konversi.
+                </p>
+                <p>
+                    **Fitur Utama yang Mendukung Penjualan Anda:**
                     <ul>
-                        <li>**Pelacakan Prospek Real-Time:** Ketahui status setiap prospek Anda secara instan.</li>
-                        <li>**Notifikasi Cerdas:** Peringatan otomatis untuk tindak lanjut penting, memastikan tidak ada peluang yang terlewatkan.</li>
-                        <li>**Integrasi Komunikasi:** Sinkronisasi data yang mulus untuk menjaga alur kerja Anda tetap cepat dan terorganisir.</li>
+                        <li>Pelacakan Prospek Real-Time: Ketahui status setiap prospek Anda secara instan.</li>
+                        <li>Notifikasi Cerdas: Peringatan otomatis untuk tindak lanjut penting, memastikan tidak ada peluang yang terlewatkan.</li>
+                        <li>Integrasi Komunikasi: Sinkronisasi data yang mulus untuk menjaga alur kerja Anda tetap cepat dan terorganisir.</li>
                     </ul>
                 </p>
                 <p class="creator-info">
                     Aplikasi ini dikembangkan oleh **Muhammad Rafli** dengan fokus pada efisiensi dan kecepatan *closing* untuk para profesional penjualan modern.
                 </p>
             </div>
+            
             <a 
                 href="https://drive.google.com/uc?export=download&id=1qBOp45BDXGDB8Pvm384WYLxVeZ3cJ1UL" 
                 class="download-button apk-btn"
             >
-                📥 UNDUH FILE APK
+                📥 UNDUH FILE APK SEKARANG
             </a>
             
-            <p class="note">
-                ⚠️ PERINGATAN: Instalasi APK memerlukan aktivasi "Install from Unknown Sources" di pengaturan keamanan perangkat Anda.
-            </p>
-            
-            <p class="footer-text">
-                Aplikasi ini hanya dapat diakses oleh pengguna yang telah disetujui oleh Admin.
-            </p>
         </div>
     </div>
-</body>
-</html>            border-radius: var(--border-radius);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1); 
-            max-width: 420px;
-            width: 90%;
-            transition: all 0.3s ease;
-        }
-
-        /* Header dan Tipografi */
-        h1 {
-            color: var(--primary-color); 
-            font-size: 2.5em;
-            margin-bottom: 5px;
-            font-weight: 700;
-        }
-        .subtitle {
-            font-size: 1.1em;
-            color: var(--secondary-color); /* Menggunakan Hijau untuk Subtitle (Aksen) */
-            margin-bottom: 30px;
-            font-weight: 500;
-        }
-        
-        /* Gaya Logo Gambar */
-        .app-logo {
-            width: 80px; /* Atur lebar logo sesuai kebutuhan */
-            height: 80px; /* Atur tinggi logo sesuai kebutuhan */
-            margin-bottom: 25px;
-            border-radius: 15px; /* Jika logo Anda berbentuk persegi, bisa ditambahkan sedikit border-radius */
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* Bayangan halus pada logo */
-        }
-
-        /* Tombol Download */
-        .download-button {
-            display: block;
-            margin: 25px auto 35px auto;
-            padding: 16px 30px; 
-            font-size: 1.1em;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
-            box-shadow: var(--button-shadow); 
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            border: none;
-            cursor: pointer;
-        }
-        .download-button:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 35px rgba(0, 123, 255, 0.35);
-        }
-        
-        /* Gaya Tombol APK */
-        .apk-btn {
-            background-color: var(--primary-color); 
-            color: white;
-        }
-        .apk-btn:active {
-             background-color: #0056b3; /* Biru lebih gelap saat diklik */
-        }
-        
-        /* Catatan Penting */
-        .note {
-            margin-top: 20px;
-            font-size: 0.85em;
-            color: #d32f2f; 
-            font-weight: 500;
-        }
-        .footer-text {
-            font-size: 0.8em;
-            color: #999;
-            margin-top: 15px;
-        }
-        
-        /* Responsif Sederhana */
-        @media (max-width: 600px) {
-            .container {
-                padding: 30px 20px;
-            }
-            h1 {
-                font-size: 2em;
-            }
-            .download-button {
-                padding: 14px 20px;
-                font-size: 1em;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <img src="logo.png" alt="Logo Aplikasi Closing Cepat" class="app-logo">
-        
-        <h1>Closing Cepat</h1>
-        <p class="subtitle">Aplikasi Resmi untuk Akselerasi Penjualan Anda</p>
-
-        <a 
-            href="https://drive.google.com/file/d/1qBOp45BDXGDB8Pvm384WYLxVeZ3cJ1UL/view?usp=drive_link" 
-            class="download-button apk-btn"
-        >
-            📥 Unduh File APK
-        </a>
-        
+    
+    <footer class="footer-note">
         <p class="note">
             ⚠️ PERINGATAN: Instalasi APK memerlukan aktivasi "Install from Unknown Sources" di pengaturan keamanan perangkat Anda.
         </p>
-        
         <p class="footer-text">
-            Aplikasi ini hanya dapat diakses oleh pengguna yang telah disetujui oleh Admin.
+            Aplikasi ini hanya dapat diakses oleh pengguna yang telah disetujui oleh Admin. Hak Cipta &copy; 2025 Closing Cepat.
         </p>
-    </div>
+    </footer>
+
 </body>
 </html>
