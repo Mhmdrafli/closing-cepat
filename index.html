@@ -3,9 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download Closing Cepat - WhatsApp Marketing Tool</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Closing Cepat v4.0.0 - WhatsApp Marketing Tool</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root {
+            --primary: #1E93AB;
+            --primary-dark: #0E5C75;
+            --secondary: #667eea;
+            --accent: #FF6B6B;
+            --success: #28C76F;
+            --warning: #FF9F43;
+            --gradient-primary: linear-gradient(135deg, #1E93AB 0%, #0E5C75 100%);
+            --gradient-secondary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-accent: linear-gradient(135deg, #FF6B6B 0%, #FFA8A8 100%);
+            --dark-bg: #0F172A;
+            --light-bg: #F8FAFC;
+            --card-bg: #FFFFFF;
+            --text-primary: #1E293B;
+            --text-secondary: #64748B;
+            --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --border-radius: 20px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -13,28 +36,561 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
             min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            color: #1a202c;
-            line-height: 1.6;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(30, 147, 171, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(255, 107, 107, 0.08) 0%, transparent 50%);
+            z-index: -1;
         }
 
         .container {
-            max-width: 600px;
-            width: 100%;
-            background: white;
-            border-radius: 24px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            overflow: hidden;
-            animation: slideUp 0.5s ease-out;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
         }
 
-        @keyframes slideUp {
+        /* Header */
+        .header {
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--gradient-accent);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .logo-container {
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo-wrapper {
+            position: relative;
+            width: 120px;
+            height: 120px;
+        }
+
+        .logo-circle {
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-circle::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(transparent, rgba(255,255,255,0.3), transparent);
+            animation: rotate 3s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .logo {
+            position: relative;
+            z-index: 2;
+            width: 60%;
+            height: 60%;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .app-name {
+            font-size: 48px;
+            font-weight: 900;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+        }
+
+        .tagline {
+            font-size: 18px;
+            color: var(--text-secondary);
+            font-weight: 500;
+            max-width: 600px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 80px;
+            align-items: center;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .version-highlight {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .version-number {
+            font-size: 48px;
+            font-weight: 900;
+            background: var(--gradient-secondary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .version-text {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 400px;
+        }
+
+        .hero-title {
+            font-size: 42px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-description {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+
+        .hero-image {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .phone-mockup {
+            width: 300px;
+            height: 600px;
+            background: var(--gradient-primary);
+            border-radius: 40px;
+            position: relative;
+            box-shadow: 
+                var(--shadow-lg),
+                inset 0 0 0 2px rgba(255,255,255,0.1);
+            overflow: hidden;
+            transform: perspective(1000px) rotateY(-10deg) rotateX(5deg);
+            transition: var(--transition);
+        }
+
+        .phone-mockup:hover {
+            transform: perspective(1000px) rotateY(-5deg) rotateX(0deg);
+        }
+
+        .phone-screen {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            background: var(--light-bg);
+            border-radius: 30px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .screen-content {
+            padding: 30px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .screen-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .screen-features {
+            list-style: none;
+        }
+
+        .screen-features li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .screen-features li i {
+            color: var(--success);
+            font-size: 18px;
+        }
+
+        /* Features Grid */
+        .features-section {
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 50px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 40px 30px;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-primary);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-primary);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            font-size: 30px;
+            color: white;
+        }
+
+        .feature-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .feature-desc {
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+
+        /* Download Section */
+        .download-section {
+            margin-bottom: 80px;
+            text-align: center;
+        }
+
+        .download-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 60px;
+            box-shadow: var(--shadow-lg);
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .download-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-primary);
+            opacity: 0.05;
+            z-index: 1;
+        }
+
+        .download-card > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .download-title {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .download-subtitle {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 22px 50px;
+            border-radius: 15px;
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 15px 40px rgba(30, 147, 171, 0.4);
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .download-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(30, 147, 171, 0.6);
+        }
+
+        .download-btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-icon {
+            font-size: 24px;
+        }
+
+        .file-info {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .info-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-label {
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .info-value {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding: 60px 0 30px;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: white;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .footer-note {
+            background: rgba(255, 193, 7, 0.1);
+            border-left: 4px solid var(--warning);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        .footer-note-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .note-icon {
+            color: var(--warning);
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .note-text {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
             from {
                 opacity: 0;
                 transform: translateY(30px);
@@ -45,419 +601,393 @@
             }
         }
 
-        /* Header */
-        .header {
-            background: linear-gradient(135deg, #1E93AB 0%, #0E5C75 100%);
-            padding: 40px 30px;
-            text-align: center;
-            color: white;
+        .animate-up {
+            animation: fadeInUp 0.6s ease-out forwards;
         }
 
-        .logo {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 20px;
-            background: white;
-            border-radius: 20px;
-            padding: 12px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .app-name {
-            font-size: 32px;
-            font-weight: 800;
-            margin-bottom: 8px;
-            letter-spacing: -0.5px;
-        }
-
-        .tagline {
-            font-size: 16px;
-            opacity: 0.95;
-            font-weight: 500;
-        }
-
-        /* Content */
-        .content {
-            padding: 40px 30px;
-        }
-
-        .version-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 24px;
-        }
-
-        .description {
-            font-size: 16px;
-            color: #4a5568;
-            margin-bottom: 32px;
-            line-height: 1.7;
-        }
-
-        /* Features */
-        .features {
-            display: grid;
-            gap: 16px;
-            margin-bottom: 32px;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 16px;
-            background: #f7fafc;
-            border-radius: 12px;
-            transition: all 0.2s ease;
-        }
-
-        .feature-item:hover {
-            background: #edf2f7;
-            transform: translateX(5px);
-        }
-
-        .feature-icon {
-            font-size: 24px;
-            flex-shrink: 0;
-        }
-
-        .feature-text {
-            font-size: 14px;
-            font-weight: 500;
-            color: #2d3748;
-        }
-
-        /* Download Button */
-        .download-section {
-            text-align: center;
-            padding: 24px 0;
-        }
-
-        .download-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            background: linear-gradient(135deg, #1E93AB 0%, #0E5C75 100%);
-            color: white;
-            padding: 18px 40px;
-            border-radius: 16px;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: 700;
-            box-shadow: 0 10px 30px rgba(30, 147, 171, 0.4);
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-
-        .download-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(30, 147, 171, 0.5);
-        }
-
-        .download-btn:active {
-            transform: translateY(-1px);
-        }
-
-        .download-icon {
-            font-size: 24px;
-        }
-
-        /* App Info */
-        .app-info {
-            display: flex;
-            justify-content: center;
-            gap: 24px;
-            flex-wrap: wrap;
-            margin-top: 24px;
-            padding-top: 24px;
-            border-top: 1px solid #e2e8f0;
-        }
-
-        .info-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .info-label {
-            font-size: 12px;
-            color: #718096;
-            font-weight: 500;
-        }
-
-        .info-value {
-            font-size: 14px;
-            color: #2d3748;
-            font-weight: 600;
-        }
-
-        /* Footer */
-        .footer {
-            background: #f7fafc;
-            padding: 24px 30px;
-            text-align: center;
-        }
-
-        .footer-note {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            padding: 16px;
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
-            border-radius: 8px;
-            margin-bottom: 16px;
-            text-align: left;
-        }
-
-        .footer-note-icon {
-            font-size: 20px;
-            flex-shrink: 0;
-        }
-
-        .footer-note-text {
-            font-size: 13px;
-            color: #856404;
-            line-height: 1.6;
-        }
-
-        .copyright {
-            font-size: 12px;
-            color: #718096;
-            margin-top: 16px;
-        }
-
-        .copyright strong {
-            color: #2d3748;
-            font-weight: 600;
-        }
-
-        /* Loading State */
-        .download-btn.loading {
-            pointer-events: none;
-            opacity: 0.7;
-        }
-
-        .download-btn.loading::after {
-            content: '';
-            width: 16px;
-            height: 16px;
-            border: 2px solid white;
-            border-top-color: transparent;
-            border-radius: 50%;
-            animation: spin 0.6s linear infinite;
-            margin-left: 8px;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
+        .delay-1 { animation-delay: 0.1s; opacity: 0; }
+        .delay-2 { animation-delay: 0.2s; opacity: 0; }
+        .delay-3 { animation-delay: 0.3s; opacity: 0; }
+        .delay-4 { animation-delay: 0.4s; opacity: 0; }
+        .delay-5 { animation-delay: 0.5s; opacity: 0; }
 
         /* Responsive */
-        @media (max-width: 640px) {
-            .container {
-                border-radius: 16px;
+        @media (max-width: 992px) {
+            .hero-section {
+                grid-template-columns: 1fr;
+                gap: 40px;
             }
-
-            .header {
-                padding: 32px 24px;
+            
+            .hero-image {
+                height: 400px;
             }
+            
+            .phone-mockup {
+                width: 250px;
+                height: 500px;
+            }
+        }
 
+        @media (max-width: 768px) {
             .app-name {
-                font-size: 28px;
+                font-size: 36px;
             }
-
-            .tagline {
-                font-size: 14px;
+            
+            .hero-title {
+                font-size: 32px;
             }
-
-            .content {
-                padding: 32px 24px;
+            
+            .version-number {
+                font-size: 36px;
             }
-
+            
+            .download-card {
+                padding: 40px 20px;
+            }
+            
             .download-btn {
                 width: 100%;
-                padding: 16px 32px;
-                font-size: 16px;
+                justify-content: center;
             }
-
-            .app-info {
-                gap: 16px;
-            }
-
-            .footer {
-                padding: 24px;
+            
+            .features-grid {
+                grid-template-columns: 1fr;
             }
         }
 
-        /* Success Animation */
-        @keyframes checkmark {
-            0% {
-                transform: scale(0);
-                opacity: 0;
+        @media (max-width: 480px) {
+            .header {
+                padding: 40px 0 30px;
             }
-            50% {
-                transform: scale(1.2);
+            
+            .logo-wrapper {
+                width: 100px;
+                height: 100px;
             }
-            100% {
-                transform: scale(1);
-                opacity: 1;
+            
+            .app-name {
+                font-size: 32px;
             }
-        }
-
-        .download-success {
-            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
-        }
-
-        .download-success .download-icon::after {
-            content: '✓';
-            animation: checkmark 0.5s ease;
+            
+            .hero-title {
+                font-size: 28px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .download-title {
+                font-size: 28px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <!-- Header -->
-        <div class="header">
-            <div class="logo">
-                <img src="images/logo.png" alt="Closing Cepat Logo" onerror="this.style.display='none'">
+        <header class="header">
+            <div class="badge animate-up">
+                <i class="fas fa-rocket"></i>
+                <span>VERSION 4.0.0 - REVOLUSI KEAMANAN</span>
             </div>
-            <h1 class="app-name">Closing Cepat</h1>
-            <p class="tagline">Marketing Tool untuk WhatsApp Automation</p>
-        </div>
-
-        <!-- Content -->
-        <div class="content">
-            <span class="version-badge">🚀 Version 3.0.0 - Latest</span>
             
-            <p class="description">
-                Tool marketing profesional untuk automasi WhatsApp blast dengan Evolution API, 
-                dashboard analytics real-time, dan fitur anti-spam yang canggih.
-            </p>
-
-            <!-- Features -->
-            <div class="features">
-                <div class="feature-item">
-                    <span class="feature-icon">⚡</span>
-                    <span class="feature-text">Blast Otomatis via Evolution API</span>
+            <div class="logo-container animate-up delay-1">
+                <div class="logo-wrapper">
+                    <div class="logo-circle">
+                        <img src="https://img.icons8.com/color/96/000000/whatsapp--v1.png" alt="Closing Cepat Logo" class="logo" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📱</text></svg>'">
+                    </div>
                 </div>
-                <div class="feature-item">
-                    <span class="feature-icon">📊</span>
-                    <span class="feature-text">Dashboard Analytics Real-time</span>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-icon">🛡️</span>
-                    <span class="feature-text">Anti-Spam Protection</span>
-                </div>
-                <div class="feature-item">
-                    <span class="feature-icon">📱</span>
-                    <span class="feature-text">UI/UX Modern & Intuitif</span>
+                
+                <div class="logo-text">
+                    <h1 class="app-name">Closing Cepat</h1>
+                    <p class="tagline">WhatsApp Marketing Tool Terdepan dengan Evolution API</p>
                 </div>
             </div>
+        </header>
 
-            <!-- Download Button -->
-            <div class="download-section">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content animate-up delay-2">
+                <div class="version-highlight">
+                    <div class="version-number">v4.0.0</div>
+                    <div class="version-text">Update Terbesar Tahun 2026</div>
+                </div>
+                
+                <h2 class="hero-title">WhatsApp Marketing dengan<br><span style="color: #1E93AB">Keamanan Tingkat Tinggi</span></h2>
+                
+                <p class="hero-description">
+                    Tool marketing profesional untuk automasi WhatsApp blast dengan Evolution API, 
+                    dashboard analytics real-time, dan fitur anti-spam yang canggih.
+                    <strong style="color: var(--accent)">Sekarang dengan isolasi instance per user!</strong>
+                </p>
+                
+                <div class="file-info">
+                    <div class="info-item">
+                        <span class="info-label">Platform</span>
+                        <span class="info-value">Android 6.0+</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Ukuran File</span>
+                        <span class="info-value">~62 MB</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Update Terakhir</span>
+                        <span class="info-value">Feb 2026</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-image animate-up delay-3">
+                <div class="phone-mockup">
+                    <div class="phone-screen">
+                        <div class="screen-content">
+                            <h3 class="screen-title">Closing Cepat v4.0.0</h3>
+                            <ul class="screen-features">
+                                <li><i class="fas fa-check-circle"></i> WhatsApp Instance Per User</li>
+                                <li><i class="fas fa-check-circle"></i> Blast Otomatis Evolution API</li>
+                                <li><i class="fas fa-check-circle"></i> Dashboard Analytics Real-time</li>
+                                <li><i class="fas fa-check-circle"></i> Anti-Spam Protection</li>
+                                <li><i class="fas fa-check-circle"></i> UI/UX Modern Premium</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section">
+            <h2 class="section-title animate-up">✨ Fitur Unggulan v4.0.0</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card animate-up delay-1">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h3 class="feature-title">Instance Per User</h3>
+                    <p class="feature-desc">
+                        Setiap user memiliki instance WhatsApp sendiri. Tidak ada lagi sharing nomor WhatsApp antar user. Keamanan maksimal untuk data Anda.
+                    </p>
+                </div>
+                
+                <div class="feature-card animate-up delay-2">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="feature-title">Blast Evolution API</h3>
+                    <p class="feature-desc">
+                        Kirim pesan otomatis via Evolution API tanpa perlu buka WhatsApp. Support QR Code & Pairing Code untuk koneksi yang lebih stabil.
+                    </p>
+                </div>
+                
+                <div class="feature-card animate-up delay-3">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="feature-title">Dashboard Analytics</h3>
+                    <p class="feature-desc">
+                        Pantau statistik pengiriman real-time dengan dashboard interaktif. Lihat success rate, failed rate, dan analytics lainnya.
+                    </p>
+                </div>
+                
+                <div class="feature-card animate-up delay-4">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Anti-Spam System</h3>
+                    <p class="feature-desc">
+                        Smart delay system dengan variasi pesan otomatis untuk menghindari deteksi spam. Safe mode dan batch mode untuk keamanan ekstra.
+                    </p>
+                </div>
+                
+                <div class="feature-card animate-up delay-5">
+                    <div class="feature-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 class="feature-title">Modern UI/UX</h3>
+                    <p class="feature-desc">
+                        Desain antarmuka premium dengan dark mode, animasi halus, dan navigasi intuitif. Pengalaman user yang lebih menyenangkan.
+                    </p>
+                </div>
+                
+                <div class="feature-card animate-up delay-5">
+                    <div class="feature-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3 class="feature-title">Smart Notifications</h3>
+                    <p class="feature-desc">
+                        Notifikasi lengkap saat pengiriman selesai. Real-time updates dan progress tracking untuk semua kegiatan Anda.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download Section -->
+        <section class="download-section">
+            <div class="download-card animate-up">
+                <h2 class="download-title">📥 Download Sekarang</h2>
+                <p class="download-subtitle">
+                    Install Closing Cepat v4.0.0 dan rasakan pengalaman WhatsApp marketing yang lebih aman, cepat, dan powerful.
+                </p>
+                
                 <a 
                     href="https://drive.google.com/file/d/1SkOELyNT1IlCjbzKarPgKWaTbd4bJWkB/view?usp=sharing" 
                     class="download-btn"
                     id="downloadBtn"
                     onclick="handleDownload(event)"
                 >
-                    <span class="download-icon">📥</span>
-                    <span>Download APK</span>
+                    <i class="fas fa-download btn-icon"></i>
+                    <span>Download APK v4.0.0</span>
                 </a>
-
-                <!-- App Info -->
-                <div class="app-info">
+                
+                <div class="file-info">
                     <div class="info-item">
-                        <span class="info-label">Platform</span>
-                        <span class="info-value">Android 6.0+</span>
+                        <span class="info-label">Version</span>
+                        <span class="info-value">4.0.0</span>
                     </div>
                     <div class="info-item">
-                        <span class="info-label">Size</span>
-                        <span class="info-value">~57 MB</span>
+                        <span class="info-label">Minimum Android</span>
+                        <span class="info-value">6.0 (API 23)</span>
                     </div>
                     <div class="info-item">
-                        <span class="info-label">Updated</span>
-                        <span class="info-value">Jan 2026</span>
+                        <span class="info-label">Release Date</span>
+                        <span class="info-value">February 2026</span>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- Footer -->
-        <div class="footer">
-            <div class="footer-note">
-                <span class="footer-note-icon">⚠️</span>
-                <div class="footer-note-text">
-                    <strong>Sebelum install:</strong> Aktifkan <strong>"Install from Unknown Sources"</strong> 
-                    di Settings → Security di HP Android Anda.
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-column">
+                        <h3>Closing Cepat</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 20px;">
+                            WhatsApp Marketing Tool terdepan dengan Evolution API integration dan keamanan tingkat tinggi.
+                        </p>
+                        <div class="social-links">
+                            <a href="https://wa.me/628997078060" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                            <a href="https://github.com/Mhmdrafli/closing_cepat" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://docs.closingcepat.com" target="_blank"><i class="fas fa-book"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>Links</h3>
+                        <ul class="footer-links">
+                            <li><a href="#"><i class="fas fa-download"></i> Download APK</a></li>
+                            <li><a href="https://docs.closingcepat.com" target="_blank"><i class="fas fa-book"></i> Documentation</a></li>
+                            <li><a href="https://github.com/Mhmdrafli/closing_cepat/issues" target="_blank"><i class="fas fa-bug"></i> Report Bug</a></li>
+                            <li><a href="https://wa.me/628997078060" target="_blank"><i class="fas fa-headset"></i> Support</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h3>System Requirements</h3>
+                        <ul class="footer-links">
+                            <li><a href="#"><i class="fas fa-mobile-alt"></i> Android 6.0+</a></li>
+                            <li><a href="#"><i class="fas fa-wifi"></i> Internet Connection</a></li>
+                            <li><a href="#"><i class="fas fa-hdd"></i> 100MB Storage</a></li>
+                            <li><a href="#"><i class="fas fa-user-check"></i> Google Account</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="footer-note">
+                    <div class="footer-note-content">
+                        <div class="note-icon">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="note-text">
+                            <strong>Penting Sebelum Install:</strong> Aktifkan opsi "Install from Unknown Sources" di Settings → Security di HP Android Anda. APK ini aman dan tidak mengandung malware.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="copyright">
+                    <p>© 2026 <strong style="color: white">Closing Cepat</strong> | Developed by Muhammad Rafli</p>
+                    <p style="margin-top: 10px; font-size: 12px;">All Rights Reserved. WhatsApp is a trademark of WhatsApp Inc.</p>
                 </div>
             </div>
-
-            <p class="copyright">
-                © 2026 <strong>Closing Cepat</strong> | Developed by Muhammad Rafli<br>
-                All Rights Reserved
-            </p>
-        </div>
+        </footer>
     </div>
 
     <script>
+        // Handle download button click
         function handleDownload(event) {
             const btn = document.getElementById('downloadBtn');
+            const originalHTML = btn.innerHTML;
             
             // Add loading state
-            btn.classList.add('loading');
-            btn.innerHTML = '<span class="download-icon">⏳</span><span>Downloading...</span>';
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin btn-icon"></i><span>Memulai Download...</span>';
+            btn.style.pointerEvents = 'none';
             
-            // Simulate download start
+            // Simulate download start with animation
             setTimeout(() => {
-                btn.classList.remove('loading');
-                btn.classList.add('download-success');
-                btn.innerHTML = '<span class="download-icon">✓</span><span>Download Started!</span>';
+                btn.innerHTML = '<i class="fas fa-check-circle btn-icon"></i><span>Download Dimulai!</span>';
+                btn.style.background = 'var(--success)';
                 
-                // Reset after 3 seconds
+                // Reset after 2 seconds
                 setTimeout(() => {
-                    btn.classList.remove('download-success');
-                    btn.innerHTML = '<span class="download-icon">📥</span><span>Download APK</span>';
-                }, 3000);
+                    btn.innerHTML = originalHTML;
+                    btn.style.background = '';
+                    btn.style.pointerEvents = 'auto';
+                }, 2000);
             }, 1000);
         }
-
-        // Add hover effect sound (optional)
-        document.querySelectorAll('.feature-item').forEach(item => {
-            item.addEventListener('mouseenter', () => {
-                item.style.transition = 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)';
+        
+        // Add scroll animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate elements on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe all elements with animate-up class
+            document.querySelectorAll('.animate-up').forEach(el => {
+                observer.observe(el);
+            });
+            
+            // Add hover effect to feature cards
+            document.querySelectorAll('.feature-card').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
             });
         });
-
-        // Smooth scroll on mobile
-        if ('scrollBehavior' in document.documentElement.style) {
-            document.documentElement.style.scrollBehavior = 'smooth';
-        }
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
     </script>
 </body>
 </html>
