@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Closing Cepat v5.0.0 - Update Terbaru</title>
+    <title>Closing Cepat v5.1.0 - Multi-Platform Update</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -17,12 +17,12 @@
             --warning: #F59E0B;
             
             /* Backgrounds */
-            --bg-body: #F0F4F8; /* Abu-abu sangat muda kebiruan */
+            --bg-body: #F0F4F8; 
             --bg-card: #FFFFFF;
             --bg-glass: rgba(255, 255, 255, 0.9);
             
             /* Text Colors */
-            --text-main: #1E293B; /* Biru gelap hampir hitam (lebih enak dibaca drpd hitam pekat) */
+            --text-main: #1E293B; 
             --text-muted: #64748B;
             
             /* Gradients */
@@ -50,7 +50,6 @@
             line-height: 1.6;
             overflow-x: hidden;
             min-height: 100vh;
-            /* Pattern Background Halus */
             background-image: 
                 radial-gradient(at 0% 0%, rgba(30, 147, 171, 0.08) 0px, transparent 50%),
                 radial-gradient(at 100% 100%, rgba(99, 102, 241, 0.08) 0px, transparent 50%);
@@ -192,8 +191,8 @@
 
         /* --- Note Penting (Posisi Baru) --- */
         .important-note {
-            background: #FEF2F2; /* Merah sangat muda */
-            border: 1px solid #FCA5A5;
+            background: #ECFDF5; /* Hijau sangat muda (Success) untuk versi stabil */
+            border: 1px solid #6EE7B7;
             border-radius: 12px;
             padding: 16px;
             margin-bottom: 30px;
@@ -204,14 +203,14 @@
         }
 
         .note-icon {
-            color: #DC2626;
+            color: #059669;
             font-size: 20px;
             margin-top: 2px;
         }
 
         .note-content {
             font-size: 14px;
-            color: #7F1D1D;
+            color: #064E3B;
             line-height: 1.5;
         }
         
@@ -317,6 +316,18 @@
             margin-left: 8px;
             vertical-align: middle;
         }
+        
+        .fix-tag {
+            display: inline-block;
+            background: #DBEAFE;
+            color: #1E40AF;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
 
         /* --- Footer --- */
         .footer {
@@ -368,105 +379,105 @@
 
         <section class="hero-section">
             <div class="badge-new animate-up delay-1">
-                ✨ Update Besar v5.0.0 Telah Hadir
+                🚀 Update Terbaru v5.1.0 (Stable)
             </div>
             <h2 class="hero-title animate-up delay-1">
-                Upgrade Produktivitas <br>
-                <span style="color: var(--primary);">Tanpa Batas</span>
+                Lebih Cepat, Lebih Stabil <br>
+                <span style="color: var(--primary);">Multi-Platform</span>
             </h2>
             <p class="hero-desc animate-up delay-2">
-                Kini hadir dengan <strong>Photolog Watermark</strong> untuk dokumentasi lapangan profesional dan perbaikan total pada sistem <strong>Dashboard Analytics</strong>.
+                Versi <strong>5.1.0</strong> hadir dengan optimasi engine <strong>Web Support</strong>, perbaikan stabilitas (fix white screen), dan peningkatan performa Photolog.
             </p>
         </section>
 
         <div class="download-card animate-up delay-2">
-            <h3 class="download-title">Download Versi Terbaru</h3>
+            <h3 class="download-title">Download Update v5.1.0</h3>
             <p style="color: var(--text-muted); margin-bottom: 30px;">
-                Dapatkan performa maksimal & fitur terbaru v5.0.0
+                Update wajib untuk stabilitas maksimal & fitur web.
             </p>
 
             <a 
-                href="https://drive.google.com/file/d/1ypF-N0fub4USxQ_fhMn7IdHU4J3jgtYj/view?usp=sharing" 
+                href="https://drive.google.com/file/d/1Oma_tdY-jqiZm2nJAlu4w0FSIFTR98jp/view?usp=sharing" 
                 class="download-btn"
                 id="downloadBtn"
                 target="_blank"
                 onclick="handleDownload(event)"
             >
                 <i class="fas fa-download"></i>
-                <span>Download APK v5.0.0</span>
+                <span>Download APK v5.1.0</span>
             </a>
 
             <div class="important-note">
-                <i class="fas fa-exclamation-triangle note-icon"></i>
+                <i class="fas fa-check-circle note-icon"></i>
                 <div class="note-content">
-                    <strong>PENTING: Wajib Uninstall App Lama</strong>
-                    Mohon uninstall aplikasi versi sebelumnya sebelum menginstall v5.0.0. Data lama akan terhapus, namun update selanjutnya (v5.1+) akan otomatis tanpa perlu uninstall lagi.
+                    <strong>Safe Update:</strong>
+                    Jika Anda sudah menggunakan v5.0.0, Anda bisa langsung install (timpa) tanpa perlu uninstall. Data tetap aman.
                 </div>
             </div>
 
             <div class="file-info">
                 <div class="info-item">
                     <span class="info-label">Versi</span>
-                    <span class="info-value">5.0.0</span>
+                    <span class="info-value">5.1.0</span>
                 </div>
                 <div class="info-item">
                     <span class="info-label">Ukuran</span>
-                    <span class="info-value">65 MB</span>
+                    <span class="info-value">68 MB</span>
                 </div>
                 <div class="info-item">
-                    <span class="info-label">Android</span>
-                    <span class="info-value">6.0+</span>
+                    <span class="info-label">Update</span>
+                    <span class="info-value">Jan 2026</span>
                 </div>
             </div>
         </div>
 
         <section class="features-section">
             <div class="section-header animate-up delay-3">
-                <h3 style="font-size: 28px; font-weight: 800; color: var(--text-main);">Apa yang Baru?</h3>
+                <h3 style="font-size: 28px; font-weight: 800; color: var(--text-main);">Apa yang Baru di v5.1.0?</h3>
             </div>
             
             <div class="features-grid animate-up delay-3">
                 <div class="feature-card">
                     <div class="icon-box">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="feature-title">
+                        Web Support <span class="new-tag">BETA</span>
+                    </div>
+                    <p class="feature-desc">
+                        Kini aplikasi mendukung akses via Browser (Chrome/Edge) dengan layout responsif yang menyesuaikan layar PC.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="icon-box">
+                        <i class="fas fa-bug"></i>
+                    </div>
+                    <div class="feature-title">
+                        Bug Fixes <span class="fix-tag">FIXED</span>
+                    </div>
+                    <p class="feature-desc">
+                        Memperbaiki masalah <i>White Screen</i> saat startup dan konflik inisialisasi pada platform Web.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="icon-box">
                         <i class="fas fa-camera"></i>
                     </div>
-                    <div class="feature-title">
-                        Photolog <span class="new-tag">BARU</span>
-                    </div>
+                    <div class="feature-title">Photolog 2.0</div>
                     <p class="feature-desc">
-                        Dokumentasi lapangan profesional dengan watermark otomatis (Lokasi GPS, Waktu, & Logo User).
+                        Optimasi fitur kamera watermark. Loading lebih cepat dan akurasi GPS ditingkatkan untuk absensi lapangan.
                     </p>
                 </div>
 
                 <div class="feature-card">
                     <div class="icon-box">
-                        <i class="fas fa-chart-pie"></i>
+                        <i class="fas fa-tachometer-alt"></i>
                     </div>
-                    <div class="feature-title">
-                        Dashboard Analytics <span class="new-tag">FIXED</span>
-                    </div>
+                    <div class="feature-title">Performance</div>
                     <p class="feature-desc">
-                        Perbaikan total! Grafik statistik pengiriman kini 100% akurat dan realtime.
-                    </p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="icon-box">
-                        <i class="fas fa-shield-virus"></i>
-                    </div>
-                    <div class="feature-title">Instance Isolation</div>
-                    <p class="feature-desc">
-                        Keamanan data terjamin. Setiap user memiliki 'ruang' WhatsApp sendiri yang terisolasi.
-                    </p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="icon-box">
-                        <i class="fab fa-whatsapp"></i>
-                    </div>
-                    <div class="feature-title">Evolution API</div>
-                    <p class="feature-desc">
-                        Engine pengiriman pesan paling stabil dengan dukungan QR Code & Pairing Code anti-putus.
+                        Waktu startup aplikasi dipangkas 40% lebih cepat berkat optimasi inisialisasi services di background.
                     </p>
                 </div>
             </div>
